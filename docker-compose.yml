@@ -1,0 +1,17 @@
+
+
+
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+  
+  frontend:
+    build: ./client
+    ports:
+      - "5173:5173"  # Adjust if using another framework
+    depends_on:
+      - backend
